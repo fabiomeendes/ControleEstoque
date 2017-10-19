@@ -1,0 +1,19 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome da Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in ViewBag.Categorias)
+        {
+            <tr>
+                <td>@categoria.Id</td>
+                <td>@categoria.Nome</td>
+
+            </tr>
+        }
+    <p>@Html.ActionLink("Inserir Nova", "Form", "Categoria")</p>
+    </tbody>
+</table>

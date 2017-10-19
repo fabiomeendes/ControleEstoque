@@ -1,0 +1,67 @@
+﻿@model IList<ControleEstoque.Models.Produto>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Preco</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Id</td>
+                <td>
+                    @Html.RouteLink(produto.Nome, "VizualizaProduto", new { id = produto.Id })
+                </td>
+                <td id="quantidade@(produto.Id)">
+                    @produto.Quantidade
+                </td>
+                <td>
+                    <a href="#" onclick="decrementa(@produto.Id);">Decrementar</a>
+                </td>
+            </tr>
+        }
+        <p>@Html.ActionLink("Inserir Novo", "Form", "Produto")</p>
+    </tbody>
+</table>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+    function decrementa(produtoId) {
+
+        //var data = { id: produtoId };
+
+        $.ajax({
+            url: '/api/Produtos/Decrementa/',
+            type: 'post',
+            dataType: "json",
+            contentType: "application/json; charset=iso-8859-1",
+            data: JSON.stringify(produtoId),
+            success: function (r) {
+
+                atualiza(r);
+
+            },
+            error: function (error) {
+
+                if (error.responseText) {
+                    alert("ATENÇÃO Ocorreu um erro");
+                }
+
+                console.log(JSON.stringify(error));
+            }
+        });
+    }
+
+    function atualiza(resposta) {
+        //$("quantidade" + resposta.Id).html(resposta.Quantidade);
+        var elemento = $("#quantidade" + resposta.Id);
+        elemento.html(resposta.Quantidade);
+    }
+</script>
