@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstoque.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace ControleEstoque
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-          
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

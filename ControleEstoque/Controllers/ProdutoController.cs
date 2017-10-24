@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using ControleEstoque.DAO;
 using ControleEstoque.Models;
+using ControleEstoque.Filtros;
 
 namespace ControleEstoque.Controllers
 {
+    [AutorizacaoFilter]
     public class ProdutoController : Controller
     {
 
@@ -29,6 +31,7 @@ namespace ControleEstoque.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Adiciona(Produto produto)
         {
             int idDaInformatica = 1;
@@ -36,7 +39,7 @@ namespace ControleEstoque.Controllers
             {
                 ModelState.AddModelError("produto.Invalido", "Informática com preço abaixo de 100 reais. ");
             }
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 ProdutosDAO dao = new ProdutosDAO();
                 dao.Adiciona(produto);
@@ -60,6 +63,6 @@ namespace ControleEstoque.Controllers
             ViewBag.Produto = produto;
             return View();
         }
-       
+
     }
 }
