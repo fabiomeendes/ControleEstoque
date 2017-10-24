@@ -63,6 +63,5 @@ namespace ControleEstoque.Controllers
             ViewBag.Produto = produto;
             return View();
         }
-
     }
 }

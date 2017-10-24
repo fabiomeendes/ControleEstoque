@@ -13,6 +13,10 @@ namespace ControleEstoque.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            //UsuariosDAO dao = new UsuariosDAO();
+            //Usuario usuario = new Usuario { Nome = "fabio", Senha = "fabio" };
+
+            //dao.Adiciona(usuario);
 
             return View();
         }

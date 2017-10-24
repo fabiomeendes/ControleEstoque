@@ -26,6 +26,7 @@ namespace ControleEstoque.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
         }
     }
 }
