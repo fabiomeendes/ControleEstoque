@@ -1,4 +1,4 @@
-# ControleEstoque
+# Controle de Estoque
 
 - Projeto desenvolvido com ASP.NET MVC 5 + Bootstrap + WebApi + Entity Frameworks
 
