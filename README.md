@@ -1,9 +1,10 @@
-# Controle de Estoque
+# inventory control
 
-- Projeto desenvolvido com ASP.NET MVC 5 + Bootstrap + WebApi + Entity Frameworks
+- Project developed with ASP.NET MVC 5 + Bootstrap + WebApi + Entity Frameworks
 
-Criei um projeto ASP.NET MVC 5 e adicionei uma WEB API chamada Produtos, desenvolvi apenas um método nela que decrementa a quantidade de produtos.
+I created a project ASP.NET MVC 5 and add a WEB API named 'Produtos', I developed just a method that decreases the quantity of products.
 
-Usei o migrations para criar minha base e tabelas.
+I used 'Migrations' to create my database.
+
 
 
