@@ -1,4 +1,4 @@
-# Stock control
+# Stock Control
 
 - Project developed with ASP.NET MVC 5 + Bootstrap + WebApi + Entity Frameworks
 
